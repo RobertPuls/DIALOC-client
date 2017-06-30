@@ -193,6 +193,9 @@ nav {
 
 #favImage{
   justify-content: center;
+  display: flex;
+  padding-right: 8%;
+  flex-wrap: wrap;
 }
 
 .hero .favorite-img {

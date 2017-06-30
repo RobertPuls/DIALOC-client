@@ -33,51 +33,7 @@ $(() => {
     }
 
     earth.setView([39.7578, -105.0072], .8);
-
-    // fetchGet(`https://dialoc-server.herokuapp.com/user/${id}/location`)
-    // .then((res) => {
-    //   console.log(res)
-    //   addFavorites([
-    //   [res[0].latitude, res[0].longitude],
-    //   antipode([res[0].latitude, res[0].longitude])
-    // ])}).then(() => addFavorites([
-    //   [
-    //     [39.7578, -105.0072],
-    //     [-44.7584, 192.2543]
-    //   ],
-    //   [
-    //     [50.7578, -105.0072],
-    //     [-50.7584, 192.1819]
-    //   ],
-    //   [
-    //     [70.7578, -115.0072],
-    //     [-30.7584, 200.1764]
-    //   ],
-    //   [
-    //     [70.7578, -115.0072],
-    //     [-30.7584, 200.1237]
-    //   ]
-    // ])).then(() => initialize(
-    //     [
-    //       [39.7578, -105.0072],
-    //       [-44.7584, 192.2543]
-    //     ],
-    //     [
-    //       [50.7578, -105.0072],
-    //       [-50.7584, 192.1819]
-    //     ],
-    //     [
-    //       [70.7578, -115.0072],
-    //       [-30.7584, 200.1764]
-    //     ],
-    //     [
-    //       [70.7578, -115.0072],
-    //       [-30.7584, 200.1237]
-    //     ]));
   }
-
-
-
 
   $.get({
     url: `https://dialoc-server.herokuapp.com/user/${id}/location`,
@@ -113,7 +69,7 @@ $(() => {
       console.log(e);
       maxZoomService.getMaxZoomAtLatLng(e, function(response) {
         maxZoom = response.zoom;
-        imgURL.push(`https://maps.googleapis.com/maps/api/staticmap?maptype=satellite&center=${homeCoords[i].toString()}&zoom=${maxZoom}&size=350x350&key=AIzaSyAiB8Q6zW5qm1u2d5LKrT98udr4wbQKEuk`);
+        imgURL.push(`https://maps.googleapis.com/maps/api/staticmap?maptype=satellite&center=${homeCoords[i].toString()}&zoom=${maxZoom-1}&size=350x350&key=AIzaSyAiB8Q6zW5qm1u2d5LKrT98udr4wbQKEuk`);
         if (i == 1) {
           $("#favImage").append(`
             <a href="#modal1" class="roundedBorder lessImage ${hero} card-panel valign-wrapper activator">
