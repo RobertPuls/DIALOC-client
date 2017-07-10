@@ -8,6 +8,8 @@ $(() => {
       'Authorization': `${localStorage.token}`
     }
   });
+  
+  if($("#email").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm))
 
   $("#submit").on("click", function() {
     $("#failMessage").hide();
@@ -29,15 +31,3 @@ $(() => {
     // $.post(`https://dialoc-server.herokuapp.com/${path}`, newUser).then((res) => window.location.href = `user.html?id=${res.user.id}`).fail(() => $("#failMessage").show());
   });
 });
-
-
-
-// fetchPost(`https://dialoc-server.herokuapp.com/${path}`, newUser)
-//       // signup(user)
-//       .then(result => {
-//         window.location.href = `user.html?id=${res.user.id}`).fail(() => $("#failMessage").show());
-//       }).catch(error => {
-//         console.log(error)
-//         $('.error-message').text(error.responseJSON.message)
-//         $('#error-modal').modal('open')
-//       })
