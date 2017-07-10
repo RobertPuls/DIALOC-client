@@ -6,6 +6,10 @@ $.ajaxSetup({
   }
 });
 
+if(window.location.href.includes("localhost){
+  url = "https://localhost:3000";                               
+}
+
 
 // const splitToken = localStorage.token.split('.')
 // const id = JSON.parse(atob(splitToken[1])).id
