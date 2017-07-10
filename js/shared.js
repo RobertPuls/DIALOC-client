@@ -6,7 +6,7 @@ $.ajaxSetup({
   }
 });
 
-if(window.location.href.includes("localhost){
+if(window.location.href.includes("localhost"){
   url = "https://localhost:3000";                               
 }
 
